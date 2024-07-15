@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HOmeUSE - Sistem Informasi Ketertiban Rumah Tangga</title>
+  <title>HOmeUSE - Kebersihan Rumah</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
   <style>
@@ -63,6 +63,13 @@
       background-color: #ffc107;
       color: #007bff;
     }
+    .cleaning-card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
+      background-color: #fff;
+    }
   </style>
 </head>
 <body>
@@ -98,7 +105,7 @@
   <!-- Sidebar -->
   <div class="sidebar">
     <nav class="nav flex-column">
-    <a class="nav-link" href="index.php"><i class="bi bi-house-gear-fill"></i> Dashboard</a>
+      <a class="nav-link" href="index.php"><i class="bi bi-house-gear-fill"></i> Dashboard</a>
       <a class="nav-link" href="manajemenwaktu.php"><i class="bi bi-clock"></i> Manajemen Waktu</a>
       <a class="nav-link" href="manajemenkeuangan.php"><i class="bi bi-wallet"></i> Manajemen Keuangan</a>
       <a class="nav-link" href="kebersihanrumah.php"><i class="bi bi-box2-heart"></i> Kebersihan</a>
@@ -110,14 +117,49 @@
 
   <!-- Content -->
   <div class="content">
-  <div class="card">
-  <h5 class="card-header">Kebersihan Rumah</h5>
-  <div class="card-body">
-    <h5 class="card-title">Senang Dapat Membantu</h5>
-    <p class="card-text">Pastikan rumah Anda selalu bersih dan teratur dengan fitur kebersihan rumah kami.</p>
-    <a href="#" class="btn btn-primary">Selengkapnya </a>
-  </div>
-</div>
+    <div class="card">
+      <h5 class="card-header">Kebersihan Rumah</h5>
+      <div class="card-body">
+        <h5 class="card-title">Senang Membantu Anda</h5>
+        <p class="card-text">Atur dan kelola jadwal kebersihan rumah Anda dengan lebih efisien menggunakan fitur kami.</p>
+        <a href="#" class="btn btn-primary">Selengkapnya</a>
+      </div>
+    </div>
+
+    <h1 class="mt-4">Kebersihan Rumah</h1>
+    <p>Buat dan kelola jadwal kebersihan rumah Anda. Sistem akan mengirimkan pengingat otomatis dan checklist dapat diakses oleh semua anggota keluarga.</p>
+    
+    <!-- Cleaning Schedule List -->
+    <div id="cleaning-list">
+      <div class="cleaning-card">
+        <h5>Membersihkan Kamar Tidur</h5>
+        <p>Jadwal: Setiap hari Minggu</p>
+        <button class="btn btn-sm btn-warning"><i class="bi bi-pencil-square"></i> Edit</button>
+        <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Hapus</button>
+      </div>
+      <div class="cleaning-card">
+        <h5>Menyapu dan Mengepel Lantai</h5>
+        <p>Jadwal: Setiap hari Sabtu</p>
+        <button class="btn btn-sm btn-warning"><i class="bi bi-pencil-square"></i> Edit</button>
+        <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Hapus</button>
+      </div>
+    </div>
+
+    <!--fform menambahkan jadwal -->
+    <div class="mt-4">
+      <h4>Tambah Jadwal Kebersihan Baru</h4>
+      <form id="add-cleaning-form">
+        <div class="mb-3">
+          <label for="cleaning-task" class="form-label">Tugas</label>
+          <input type="text" class="form-control" id="cleaning-task" required>
+        </div>
+        <div class="mb-3">
+          <label for="cleaning-schedule" class="form-label">Jadwal</label>
+          <input type="text" class="form-control" id="cleaning-schedule" required>
+        </div>
+        <button type="submit" class="btn unique-btn">Tambah</button>
+      </form>
+    </div>
   </div>
   <!-- End Content -->
 
@@ -131,7 +173,32 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Custom JS can be added here if needed
+      const form = document.getElementById('add-cleaning-form');
+      const cleaningList = document.getElementById('cleaning-list');
+
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const cleaningTask = document.getElementById('cleaning-task').value;
+        const cleaningSchedule = document.getElementById('cleaning-schedule').value;
+
+        const cleaningCard = document.createElement('div');
+        cleaningCard.className = 'cleaning-card';
+        cleaningCard.innerHTML = `
+          <h5>${cleaningTask}</h5>
+          <p>Jadwal: ${cleaningSchedule}</p>
+          <button class="btn btn-sm btn-warning"><i class="bi bi-pencil-square"></i> Edit</button>
+          <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Hapus</button>
+        `;
+
+        cleaningCard.querySelector('.btn-danger').addEventListener('click', function() {
+          cleaningList.removeChild(cleaningCard);
+        });
+
+        cleaningList.appendChild(cleaningCard);
+
+        form.reset();
+      });
     });
   </script>
 </body>
