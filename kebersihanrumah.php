@@ -98,11 +98,11 @@
   <!-- Sidebar -->
   <div class="sidebar">
     <nav class="nav flex-column">
-      <a class="nav-link" href="#manajemen-waktu"><i class="bi bi-clock"></i> Manajemen Waktu</a>
-      <a class="nav-link" href="#manajemen-keuangan"><i class="bi bi-wallet"></i> Manajemen Keuangan</a>
-      <a class="nav-link" href="#kebersihan-rumah"><i class="bi bi-broom"></i> Kebersihan</a>
-      <a class="nav-link" href="#komunikasi-keluarga"><i class="bi bi-chat-dots"></i> Komunikasi</a>
-      <a class="nav-link" href="#pembagian-tugas"><i class="bi bi-check2-square"></i> Pembagian Tugas</a>
+      <a class="nav-link" href="#manajemenwaktu.php"><i class="bi bi-clock"></i> Manajemen Waktu</a>
+      <a class="nav-link" href="#manajemenkeuangan.php"><i class="bi bi-wallet"></i> Manajemen Keuangan</a>
+      <a class="nav-link" href="#kebersihanrumah.php"><i class="bi bi-broom"></i> Kebersihan</a>
+      <a class="nav-link" href="#komunikasikeluarga.php"><i class="bi bi-chat-dots"></i> Komunikasi</a>
+      <a class="nav-link" href="#pembagiantugas.php"><i class="bi bi-check2-square"></i> Pembagian Tugas</a>
     </nav>
   </div>
   <!-- End Sidebar -->
