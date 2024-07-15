@@ -63,6 +63,13 @@
       background-color: #ffc107;
       color: #007bff;
     }
+    .event-card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
+      background-color: #fff;
+    }
   </style>
 </head>
 <body>
@@ -98,55 +105,63 @@
   <!-- Sidebar -->
   <div class="sidebar">
     <nav class="nav flex-column">
-      <a class="nav-link" href="#manajemenwaktu.php"><i class="bi bi-clock"></i> Manajemen Waktu</a>
-      <a class="nav-link" href="#manajemenkeuangan.php"><i class="bi bi-wallet"></i> Manajemen Keuangan</a>
-      <a class="nav-link" href="#kebersihanrumah.php"><i class="bi bi-broom"></i> Kebersihan</a>
-      <a class="nav-link" href="#komunikasikeluarga.php"><i class="bi bi-chat-dots"></i> Komunikasi</a>
-      <a class="nav-link" href="#pembagiantugas.php"><i class="bi bi-check2-square"></i> Pembagian Tugas</a>
+      <a class="nav-link" href="index.php"><i class="bi bi-house-gear-fill"></i> Dashboard</a>
+      <a class="nav-link" href="manajemenwaktu.php"><i class="bi bi-clock"></i> Manajemen Waktu</a>
+      <a class="nav-link" href="manajemenkeuangan.php"><i class="bi bi-wallet"></i> Manajemen Keuangan</a>
+      <a class="nav-link" href="kebersihanrumah.php"><i class="bi bi-box2-heart"></i> Kebersihan</a>
+      <a class="nav-link" href="komunikasikeluarga.php"><i class="bi bi-chat-dots"></i> Komunikasi</a>
+      <a class="nav-link" href="pembagiantugas.php"><i class="bi bi-check2-square"></i> Pembagian Tugas</a>
     </nav>
   </div>
   <!-- End Sidebar -->
 
   <!-- Content -->
   <div class="content">
-    <div class="container">
-      <h1 class="mt-4">Selamat Datang di HOmeUSE</h1>
-      <p>HOmeUSE membantu Anda mengatur rumah tangga dengan lebih baik dan efisien.</p>
-      
-      <!-- Manajemen Waktu Section -->
-      <section id="manajemen-waktu" class="mt-5">
-        <h2>Manajemen Waktu</h2>
-        <p>Atur jadwal harian Anda dengan lebih baik menggunakan fitur manajemen waktu kami.</p>
-        <button class="btn unique-btn">Lihat Detail</button>
-      </section>
-      
-      <!-- Manajemen Keuangan Section -->
-      <section id="manajemen-keuangan" class="mt-5">
-        <h2>Manajemen Keuangan</h2>
-        <p>Kelola keuangan keluarga Anda dengan lebih efisien menggunakan fitur manajemen keuangan.</p>
-        <button class="btn unique-btn">Lihat Detail</button>
-      </section>
-      
-      <!-- Kebersihan Rumah Section -->
-      <section id="kebersihan-rumah" class="mt-5">
-        <h2>Kebersihan Rumah</h2>
-        <p>Pastikan rumah Anda selalu bersih dan teratur dengan fitur kebersihan rumah kami.</p>
-        <button class="btn unique-btn">Lihat Detail</button>
-      </section>
-      
-      <!-- Komunikasi Keluarga Section -->
-      <section id="komunikasi-keluarga" class="mt-5">
-        <h2>Komunikasi Keluarga</h2>
-        <p>Perbaiki komunikasi antar anggota keluarga dengan fitur komunikasi keluarga kami.</p>
-        <button class="btn unique-btn">Lihat Detail</button>
-      </section>
-      
-      <!-- Pembagian Tugas Section -->
-      <section id="pembagian-tugas" class="mt-5">
-        <h2>Pembagian Tugas</h2>
-        <p>Bagikan tugas rumah tangga dengan merata menggunakan fitur pembagian tugas kami.</p>
-        <button class="btn unique-btn">Lihat Detail</button>
-      </section>
+    <div class="card">
+      <h5 class="card-header">Manajemen Waktu</h5>
+      <div class="card-body">
+        <h5 class="card-title">Kelola Waktu Anda</h5>
+        <p class="card-text">Atur kegiatan harian, mingguan, dan bulanan dengan fitur manajemen waktu kami.</p>
+        <a href="#" class="btn btn-primary">Selengkapnya</a>
+      </div>
+    </div>
+
+    <h1 class="mt-4">Manajemen Waktu</h1>
+    <p>Kelola waktu Anda dengan lebih efisien menggunakan fitur kami. Tambah, edit, dan hapus kegiatan dengan mudah. Sistem akan mengirimkan pengingat otomatis sebelum kegiatan dimulai.</p>
+    
+    <!-- Calendar View -->
+    <div class="d-flex justify-content-between mb-3">
+      <div>
+        <button class="btn btn-outline-primary" id="view-daily">Harian</button>
+        <button class="btn btn-outline-primary" id="view-weekly">Mingguan</button>
+        <button class="btn btn-outline-primary" id="view-monthly">Bulanan</button>
+      </div>
+      <button class="btn unique-btn" data-bs-toggle="modal" data-bs-target="#addEventModal">Tambah Kegiatan</button>
+    </div>
+    <div id="calendar-view" class="mb-4">
+      <!-- Placeholder for calendar -->
+      <div class="alert alert-info" role="alert">
+        Tampilan kalender akan muncul di sini.
+      </div>
+    </div>
+
+    <!-- Event List -->
+    <div id="event-list">
+      <div class="event-card">
+        <h5>Meeting Keluarga</h5>
+        <p>Meeting keluarga untuk diskusi rencana liburan.</p>
+        <p><strong>Waktu:</strong> 10 Juli 2024, 19:00</p>
+        <button class="btn btn-sm btn-warning"><i class="bi bi-pencil-square"></i> Edit</button>
+        <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Hapus</button>
+      </div>
+      <div class="event-card">
+        <h5>Belanja Bulanan</h5>
+        <p>Belanja bulanan di supermarket.</p>
+        <p><strong>Waktu:</strong> 15 Juli 2024, 09:00</p>
+        <button class="btn btn-sm btn-warning"><i class="bi bi-pencil-square"></i> Edit</button>
+        <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Hapus</button>
+      </div>
+      <!-- Add more event entries as needed -->
     </div>
   </div>
   <!-- End Content -->
@@ -157,11 +172,87 @@
   </footer>
   <!-- End Footer -->
 
+  <!-- Add Event Modal -->
+  <div class="modal fade" id="addEventModal" tabindex="-1" aria-labelledby="addEventModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addEventModalLabel">Tambah Kegiatan Baru</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="add-event-form">
+            <div class="mb-3">
+              <label for="event-title" class="form-label">Judul Kegiatan</label>
+              <input type="text" class="form-control" id="event-title" required>
+            </div>
+            <div class="mb-3">
+              <label for="event-desc" class="form-label">Deskripsi Kegiatan</label>
+              <textarea class="form-control" id="event-desc" rows="3" required></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="event-date" class="form-label">Tanggal & Waktu</label>
+              <input type="datetime-local" class="form-control" id="event-date" required>
+            </div>
+            <button type="submit" class="btn unique-btn">Tambah</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Add Event Modal -->
+
   <!-- Bootstrap JS and dependencies -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Custom JS can be added here if needed
+      const form = document.getElementById('add-event-form');
+      const eventList = document.getElementById('event-list');
+      const calendarView = document.getElementById('calendar-view');
+
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const eventTitle = document.getElementById('event-title').value;
+        const eventDesc = document.getElementById('event-desc').value;
+        const eventDate = document.getElementById('event-date').value;
+
+        const eventCard = document.createElement('div');
+        eventCard.className = 'event-card';
+        eventCard.innerHTML = `
+          <h5>${eventTitle}</h5>
+          <p>${eventDesc}</p>
+          <p><strong>Waktu:</strong> ${eventDate}</p>
+          <button class="btn btn-sm btn-warning"><i class="bi bi-pencil-square"></i> Edit</button>
+          <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Hapus</button>
+        `;
+
+        eventCard.querySelector('.btn-danger').addEventListener('click', function() {
+          eventList.removeChild(eventCard);
+        });
+
+        eventCard.querySelector('.btn-warning').addEventListener('click', function() {
+          // Implement edit functionality
+        });
+
+        eventList.appendChild(eventCard);
+
+        form.reset();
+        const modal = bootstrap.Modal.getInstance(document.getElementById('addEventModal'));
+        modal.hide();
+      });
+
+      document.getElementById('view-daily').addEventListener('click', function() {
+        calendarView.innerHTML = '<div class="alert alert-info" role="alert">Tampilan Harian.</div>';
+      });
+
+      document.getElementById('view-weekly').addEventListener('click', function() {
+        calendarView.innerHTML = '<div class="alert alert-info" role="alert">Tampilan Mingguan.</div>';
+      });
+
+      document.getElementById('view-monthly').addEventListener('click', function() {
+        calendarView.innerHTML = '<div class="alert alert-info" role="alert">Tampilan Bulanan.</div>';
+      });
     });
   </script>
 </body>

@@ -98,56 +98,26 @@
   <!-- Sidebar -->
   <div class="sidebar">
     <nav class="nav flex-column">
-      <a class="nav-link" href="#manajemenwaktu.php"><i class="bi bi-clock"></i> Manajemen Waktu</a>
-      <a class="nav-link" href="#manajemenkeuangan.php"><i class="bi bi-wallet"></i> Manajemen Keuangan</a>
-      <a class="nav-link" href="#kebersihanrumah.php"><i class="bi bi-broom"></i> Kebersihan</a>
-      <a class="nav-link" href="#komunikasikeluarga.php"><i class="bi bi-chat-dots"></i> Komunikasi</a>
-      <a class="nav-link" href="#pembagiantugas.php"><i class="bi bi-check2-square"></i> Pembagian Tugas</a>
+    <a class="nav-link" href="index.php"><i class="bi bi-house-gear-fill"></i> Dashboard</a>
+      <a class="nav-link" href="manajemenwaktu.php"><i class="bi bi-clock"></i> Manajemen Waktu</a>
+      <a class="nav-link" href="manajemenkeuangan.php"><i class="bi bi-wallet"></i> Manajemen Keuangan</a>
+      <a class="nav-link" href="kebersihanrumah.php"><i class="bi bi-box2-heart"></i> Kebersihan</a>
+      <a class="nav-link" href="komunikasikeluarga.php"><i class="bi bi-chat-dots"></i> Komunikasi</a>
+      <a class="nav-link" href="pembagiantugas.php"><i class="bi bi-check2-square"></i> Pembagian Tugas</a>
     </nav>
   </div>
   <!-- End Sidebar -->
 
   <!-- Content -->
   <div class="content">
-    <div class="container">
-      <h1 class="mt-4">Selamat Datang di HOmeUSE</h1>
-      <p>HOmeUSE membantu Anda mengatur rumah tangga dengan lebih baik dan efisien.</p>
-      
-      <!-- Manajemen Waktu Section -->
-      <section id="manajemen-waktu" class="mt-5">
-        <h2>Manajemen Waktu</h2>
-        <p>Atur jadwal harian Anda dengan lebih baik menggunakan fitur manajemen waktu kami.</p>
-        <button class="btn unique-btn">Lihat Detail</button>
-      </section>
-      
-      <!-- Manajemen Keuangan Section -->
-      <section id="manajemen-keuangan" class="mt-5">
-        <h2>Manajemen Keuangan</h2>
-        <p>Kelola keuangan keluarga Anda dengan lebih efisien menggunakan fitur manajemen keuangan.</p>
-        <button class="btn unique-btn">Lihat Detail</button>
-      </section>
-      
-      <!-- Kebersihan Rumah Section -->
-      <section id="kebersihan-rumah" class="mt-5">
-        <h2>Kebersihan Rumah</h2>
-        <p>Pastikan rumah Anda selalu bersih dan teratur dengan fitur kebersihan rumah kami.</p>
-        <button class="btn unique-btn">Lihat Detail</button>
-      </section>
-      
-      <!-- Komunikasi Keluarga Section -->
-      <section id="komunikasi-keluarga" class="mt-5">
-        <h2>Komunikasi Keluarga</h2>
-        <p>Perbaiki komunikasi antar anggota keluarga dengan fitur komunikasi keluarga kami.</p>
-        <button class="btn unique-btn">Lihat Detail</button>
-      </section>
-      
-      <!-- Pembagian Tugas Section -->
-      <section id="pembagian-tugas" class="mt-5">
-        <h2>Pembagian Tugas</h2>
-        <p>Bagikan tugas rumah tangga dengan merata menggunakan fitur pembagian tugas kami.</p>
-        <button class="btn unique-btn">Lihat Detail</button>
-      </section>
-    </div>
+  <div class="card">
+  <h5 class="card-header">Kebersihan Rumah</h5>
+  <div class="card-body">
+    <h5 class="card-title">Senang Dapat Membantu</h5>
+    <p class="card-text">Pastikan rumah Anda selalu bersih dan teratur dengan fitur kebersihan rumah kami.</p>
+    <a href="#" class="btn btn-primary">Selengkapnya </a>
+  </div>
+</div>
   </div>
   <!-- End Content -->
 

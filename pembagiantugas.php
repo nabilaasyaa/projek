@@ -63,6 +63,13 @@
       background-color: #ffc107;
       color: #007bff;
     }
+    .task-card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
+      background-color: #fff;
+    }
   </style>
 </head>
 <body>
@@ -98,55 +105,61 @@
   <!-- Sidebar -->
   <div class="sidebar">
     <nav class="nav flex-column">
-      <a class="nav-link" href="#manajemenwaktu.php"><i class="bi bi-clock"></i> Manajemen Waktu</a>
-      <a class="nav-link" href="#manajemenkeuangan.php"><i class="bi bi-wallet"></i> Manajemen Keuangan</a>
-      <a class="nav-link" href="#kebersihanrumah.php"><i class="bi bi-broom"></i> Kebersihan</a>
-      <a class="nav-link" href="#komunikasikeluarga.php"><i class="bi bi-chat-dots"></i> Komunikasi</a>
-      <a class="nav-link" href="#pembagiantugas.php"><i class="bi bi-check2-square"></i> Pembagian Tugas</a>
+      <a class="nav-link" href="index.php"><i class="bi bi-house-gear-fill"></i> Dashboard</a>
+      <a class="nav-link" href="manajemenwaktu.php"><i class="bi bi-clock"></i> Manajemen Waktu</a>
+      <a class="nav-link" href="manajemenkeuangan.php"><i class="bi bi-wallet"></i> Manajemen Keuangan</a>
+      <a class="nav-link" href="kebersihanrumah.php"><i class="bi bi-box2-heart"></i> Kebersihan</a>
+      <a class="nav-link" href="komunikasikeluarga.php"><i class="bi bi-chat-dots"></i> Komunikasi</a>
+      <a class="nav-link" href="pembagiantugas.php"><i class="bi bi-check2-square"></i> Pembagian Tugas</a>
     </nav>
   </div>
   <!-- End Sidebar -->
 
   <!-- Content -->
   <div class="content">
-    <div class="container">
-      <h1 class="mt-4">Selamat Datang di HOmeUSE</h1>
-      <p>HOmeUSE membantu Anda mengatur rumah tangga dengan lebih baik dan efisien.</p>
-      
-      <!-- Manajemen Waktu Section -->
-      <section id="manajemen-waktu" class="mt-5">
-        <h2>Manajemen Waktu</h2>
-        <p>Atur jadwal harian Anda dengan lebih baik menggunakan fitur manajemen waktu kami.</p>
-        <button class="btn unique-btn">Lihat Detail</button>
-      </section>
-      
-      <!-- Manajemen Keuangan Section -->
-      <section id="manajemen-keuangan" class="mt-5">
-        <h2>Manajemen Keuangan</h2>
-        <p>Kelola keuangan keluarga Anda dengan lebih efisien menggunakan fitur manajemen keuangan.</p>
-        <button class="btn unique-btn">Lihat Detail</button>
-      </section>
-      
-      <!-- Kebersihan Rumah Section -->
-      <section id="kebersihan-rumah" class="mt-5">
-        <h2>Kebersihan Rumah</h2>
-        <p>Pastikan rumah Anda selalu bersih dan teratur dengan fitur kebersihan rumah kami.</p>
-        <button class="btn unique-btn">Lihat Detail</button>
-      </section>
-      
-      <!-- Komunikasi Keluarga Section -->
-      <section id="komunikasi-keluarga" class="mt-5">
-        <h2>Komunikasi Keluarga</h2>
-        <p>Perbaiki komunikasi antar anggota keluarga dengan fitur komunikasi keluarga kami.</p>
-        <button class="btn unique-btn">Lihat Detail</button>
-      </section>
-      
-      <!-- Pembagian Tugas Section -->
-      <section id="pembagian-tugas" class="mt-5">
-        <h2>Pembagian Tugas</h2>
-        <p>Bagikan tugas rumah tangga dengan merata menggunakan fitur pembagian tugas kami.</p>
-        <button class="btn unique-btn">Lihat Detail</button>
-      </section>
+    <div class="card">
+      <h5 class="card-header">Pembagian Tugas</h5>
+      <div class="card-body">
+        <h5 class="card-title">Atur Tugas Rumah Tangga</h5>
+        <p class="card-text">Bagikan tugas rumah tangga kepada anggota keluarga dengan lebih mudah menggunakan fitur pembagian tugas kami.</p>
+        <a href="#" class="btn btn-primary">Selengkapnya</a>
+      </div>
+    </div>
+
+    <h1 class="mt-4">Pembagian Tugas</h1>
+    <p>Atur dan distribusikan tugas rumah tangga dengan lebih efisien. Buat daftar tugas, alokasikan kepada anggota keluarga, dan pantau penyelesaiannya.</p>
+    
+    <!-- Task List -->
+    <div id="task-list">
+      <div class="task-card">
+        <h5>Cuci Piring</h5>
+        <p>Tugas mencuci piring setelah makan malam.</p>
+        <p><strong>Penanggung Jawab:</strong> Anak 1</p>
+        <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Hapus</button>
+      </div>
+      <div class="task-card">
+        <h5>Membersihkan Kamar</h5>
+        <p>Tugas membersihkan kamar tidur setiap pagi.</p>
+        <p><strong>Penanggung Jawab:</strong> Anak 2</p>
+        <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Hapus</button>
+      </div>
+      <!-- Add more task entries as needed -->
+    </div>
+
+    <!-- Add Task Form -->
+    <div class="mt-4">
+      <h4>Tambah Tugas Baru</h4>
+      <form id="add-task-form">
+        <div class="mb-3">
+          <label for="task-desc" class="form-label">Deskripsi Tugas</label>
+          <textarea class="form-control" id="task-desc" rows="3" required></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="task-responsible" class="form-label">Penanggung Jawab</label>
+          <input type="text" class="form-control" id="task-responsible" required>
+        </div>
+        <button type="submit" class="btn unique-btn">Tambah</button>
+      </form>
     </div>
   </div>
   <!-- End Content -->
@@ -161,7 +174,32 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Custom JS can be added here if needed
+      const form = document.getElementById('add-task-form');
+      const taskList = document.getElementById('task-list');
+
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const taskDesc = document.getElementById('task-desc').value;
+        const taskResponsible = document.getElementById('task-responsible').value;
+
+        const taskCard = document.createElement('div');
+        taskCard.className = 'task-card';
+        taskCard.innerHTML = `
+          <h5>${taskDesc}</h5>
+          <p>${taskDesc}</p>
+          <p><strong>Penanggung Jawab:</strong> ${taskResponsible}</p>
+          <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Hapus</button>
+        `;
+
+        taskCard.querySelector('.btn-danger').addEventListener('click', function() {
+          taskList.removeChild(taskCard);
+        });
+
+        taskList.appendChild(taskCard);
+
+        form.reset();
+      });
     });
   </script>
 </body>
